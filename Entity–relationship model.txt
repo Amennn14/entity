@@ -1,0 +1,97 @@
+Entities and Attributes
+
+Gymnasium
+
+Attributes:
+
+Gym_ID (Primary Key)
+
+Name
+
+Address
+
+Phone_Number
+
+Member
+
+Attributes:
+
+Member_ID (Primary Key)
+
+Last_Name
+
+First_Name
+
+Address
+
+Date_of_Birth
+
+Gender
+
+Gym_ID (Foreign Key referencing Gymnasium)
+
+Session
+
+Attributes:
+
+Session_ID (Primary Key)
+
+Sport_Type
+
+Schedule
+
+Max_Capacity (Default: 20)
+
+Coach
+
+Attributes:
+
+Coach_ID (Primary Key)
+
+Last_Name
+
+First_Name
+
+Age
+
+Specialty
+
+Registration
+
+Attributes:
+
+Registration_ID (Primary Key)
+
+Member_ID (Foreign Key referencing Member)
+
+Session_ID (Foreign Key referencing Session)
+
+Session_Coach
+
+Attributes:
+
+Session_ID (Foreign Key referencing Session)
+
+Coach_ID (Foreign Key referencing Coach)
+
+Primary Key: Combination of Session_ID and Coach_ID
+
+Relationships
+
+Gymnasium - Member
+
+A Gymnasium can have many Members.
+
+A Member is associated with one Gymnasium.
+
+Session - Member (via Registration)
+
+A Session can have up to 20 Members.
+
+A Member can register for multiple Sessions.
+
+Session - Coach (via Session_Coach)
+
+A Session can have up to two Coaches.
+
+A Coach can lead multiple Sessions.
